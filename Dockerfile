@@ -26,12 +26,11 @@ RUN curl -LO https://deployer.org/deployer.phar && \
 	chmod +x /usr/local/bin/dep
 
 # Clone project
-RUN mkdir /opt/clone_app
-RUN git clone --single-branch --branch ${GIT_BRANCH} git@github.com:huongnx-0984/autodeploy_example.git clone_app
+RUN cd /opt && \
+    git clone --single-branch --branch ${GIT_BRANCH} git@github.com:huongnx-0984/autodeploy_example.git clone_app
 
 # Run deployer
-RUN cd /opt/clone_app
-RUN dep deploy staging
+RUN cd /opt/clone_app && dep deploy staging
 
 WORKDIR /opt/clone_app
 
