@@ -33,6 +33,7 @@ RUN cd /opt && \
 RUN cd /opt/clone_app && dep deploy staging
 
 # feat A change
+# feature B change
 WORKDIR /opt/clone_app
 
 CMD [ "php" ]
