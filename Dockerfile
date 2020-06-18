@@ -32,6 +32,7 @@ RUN cd /opt && \
 # Run deployer
 RUN cd /opt/clone_app && dep deploy staging
 
+# 
 WORKDIR /opt/clone_app
 
 CMD [ "php" ]
